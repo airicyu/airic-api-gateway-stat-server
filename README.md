@@ -49,6 +49,7 @@ admin-token: d8745e9d03be41ad817a47176ade4dcc
 ## REST APIs
 
 ### Query App API usage stat. Grouped by Client
+```
 POST http://localhost:3005/statQuery/app/b84cdbefe8ab42d38df0aa415030c4a1
 Content-type: application/json
 id-key: {{appIdKey}}
@@ -58,8 +59,10 @@ id-key: {{appIdKey}}
     "bucketEnd": 1600000000,
     "groupBy": "clientId"
 }
+```
 
 ### Query App API usage stat. Grouped by Operation
+```
 POST http://localhost:3005/statQuery/app/b84cdbefe8ab42d38df0aa415030c4a1
 Content-type: application/json
 id-key: {{workspaceIdKey}}
@@ -69,8 +72,10 @@ id-key: {{workspaceIdKey}}
     "bucketEnd": 1600000000,
     "groupBy": "opId"
 }
+```
 
 ### Query App API usage stat. Grouped by Client and filter by specific Client
+```
 POST http://localhost:3005/statQuery/app/b84cdbefe8ab42d38df0aa415030c4a1
 Content-type: application/json
 id-key: {{workspaceIdKey}}
@@ -81,8 +86,10 @@ id-key: {{workspaceIdKey}}
     "bucketEnd": 1600000000,
     "groupBy": "clientId"
 }
+```
 
 ### Query App API usage stat. Grouped by Operation and filter by specific Client
+```
 POST http://localhost:3005/statQuery/app/b84cdbefe8ab42d38df0aa415030c4a1
 Content-type: application/json
 id-key: {{workspaceIdKey}}
@@ -93,8 +100,10 @@ id-key: {{workspaceIdKey}}
     "bucketEnd": 1600000000,
     "groupBy": "opId"
 }
+```
 
 ### Query Client perspective App API usage stat. Grouped by App.
+```
 POST http://localhost:3005/statQuery/client/4364938982b54da1807c599a955cdfcc
 Content-type: application/json
 id-key: {{workspaceIdKey}}
@@ -103,3 +112,4 @@ id-key: {{workspaceIdKey}}
     "bucketStart": 1508560920,
     "bucketEnd": 1600000000
 }
+```
