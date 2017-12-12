@@ -39,7 +39,7 @@ Sample:
 ```yaml
 pull-api-config-interval-second: 60
 config-server-base-url: http://localhost:3001
-id-key-validation-endpoint-url: http://localhost:3002/keys/id-key/verification
+id-key-validation-endpoint-url: http://localhost:3002/keys/id-keys/verification
 admin-token: d8745e9d03be41ad817a47176ade4dcc
 ```
 
