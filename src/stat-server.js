@@ -282,15 +282,17 @@ statServer.inflatExpressApp = function (app) {
 }.bind(statServer);
 
 statServer.run = async function (port = 3005) {
-    if (!this._app) {
-        this.inflatExpressApp();
+    let self = this;
+    if (!self._app) {
+        self.inflatExpressApp();
     }
 
     await apiConfigHolder.pullConfig(statServer._config);
-    setInterval(apiConfigHolder.pullConfig, statServer._config['pull-api-config-interval-second'] * 1000, statServer._config);
+    self.pullConfigInterval = setInterval(apiConfigHolder.pullConfig, statServer._config['pull-api-config-interval-second'] * 1000, statServer._config);
 
     return new Promise((resolve) => {
-        this._app.listen(port, function () {
+        self._app.listen(port, function () {
+            clearInterval(self.pullConfigInterval);
             console.log(`API stat server started with port ${port}`);
             resolve();
         });
